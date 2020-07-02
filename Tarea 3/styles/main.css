@@ -1,0 +1,298 @@
+/* ESTILOS GENERALES */
+
+*{
+   margin: 0;
+   padding: 0;
+  
+}
+
+:root{
+    --text: monospace, serif, sans-serif;
+    --main-color: #033949;
+}
+
+/* ESTILOS SHEADER */
+
+header{
+    height: 350px;
+    background-image: url("imagenes/pelota.jpg");
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: cover;
+    background-position: top;
+}
+
+
+
+h1{
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 2px;
+    font-style: oblique;
+    font-weight: 900;
+    color: white;
+    font-family: var(--text);
+}
+
+h2{
+    text-align: center;
+    padding: 15px 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 380px;
+    font-size: 25px;
+    font-style: oblique;
+    font-weight: 900;
+    font-family: var(--text);
+}
+
+#logo{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    border-radius: 150px;
+}
+
+/* ESTILOS NAV */
+
+nav{
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    top: 350px;
+    right: 2px;
+    background-color: var(--main-color);
+    text-align: center;
+}
+
+
+nav>a{
+    margin: 25px 15px;
+    padding: 0 50px;
+    padding-bottom: 6px;
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+    font-family: var(--text);
+}
+
+.active{
+    background-color: #1DA365;
+}
+
+/* ESTILOS MAIN */
+
+body{
+    background-color: #A1ADA5;
+}
+
+main{
+    margin: 100px;
+    padding: 0 150px;
+    text-align: center;
+    border: 10px;
+    border-color: black;
+    border-style: double;
+    font-family: cursive;
+
+}
+
+.main-galery{
+    border: none;
+}
+
+main>div{
+    margin: 30px 0;
+}
+
+.actividad, .parrafo {
+    margin: 0 20px;
+}
+
+main>p{
+    margin: 20px 0;
+    padding: 5px 0;
+}
+
+/*galeriaaa*/
+
+#main-galery{
+    box-sizing: border-box;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(3, 350px);
+    justify-content: center;
+    align-content: center;
+    width: 100vh;
+    margin: auto;
+    grid-gap: 15px;
+}
+
+.galeria img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    vertical-align: top;
+    transition: transform 1s;
+}
+
+.galeria > a{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.galeria a:hover img{
+    filter: blur(2px);
+    transform: rotate(10deg) scale(1.3);
+}
+
+.ligth-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.ligth-box img{
+    width: 75vh;
+    height: 70vh;
+}
+
+.ligth-box:target{
+    transform: scale(1);
+}
+
+.close{
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: rgb(8, 6, 6);
+    color: white;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 60%;
+    line-height: 40px;
+}
+
+.next{
+    display: block;
+    background: rgb(8, 6, 6);
+    background-color:rgb(8, 6, 6);
+    color: white;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+article i{
+    background-color: rgb(8, 6, 6);
+}
+/* ESTILOS RULES */
+
+#main-rules{
+    text-align: left;
+}
+
+#main-rules>p{
+    text-align: center;
+}
+
+
+.numeros>ol>li {
+    list-style: decimal;
+    margin-top: 10px;
+}
+
+
+.circle{
+    list-style: circle;
+}
+
+dt{
+    font-size: 17px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+dd{
+    padding-left: 10px;
+}
+
+ul{
+    list-style: square;
+    padding-left: 40px;
+   
+}
+
+ol{
+    padding-left: 30px;
+}
+
+/* ESTILOS GAME INFO */
+
+.main-game-info{
+    text-align: left;
+}
+
+table{
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px;
+
+}
+
+th, td{
+    padding: 10px 15px;
+    border: 1px solid rgb(44, 30, 30);
+}
+
+tr>td:first-child{
+    text-align: center;
+}
+
+thead{
+    background-color: rgb(43, 44, 71);
+    color: white;
+}
+
+tbody>tr:nth-child(even){
+    background-color: #bdc8cf;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mail-phone{
+    display: flex;
+    flex-direction: row; 
+}
+
+.mail-phone>p:nth-child(2){
+    margin-left: 250px;
+}

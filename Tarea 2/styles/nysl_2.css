@@ -1,0 +1,88 @@
+/* ESTILOS GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* ESTILOS HEADER */
+
+header{
+    height: 400px;
+    background-image: url("imagenes/imagen2.jpg");
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: cover;
+}
+
+header>h1{
+  background-color: white;
+}
+
+header>h2{
+    border: 5px solid black;
+    text-align: center;
+    padding: 15px 0px;
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 400px;
+    font-size: 25px;
+}
+
+/* ESTILOS NAV */
+
+nav{
+    position: absolute;
+    top: 25px;
+    right: 2px;
+}
+
+
+nav a{
+    margin: 25px 15px;
+    background-color: #2F3C99;
+    color: white;
+    border: 2px solid black;
+    text-decoration: none;
+    box-shadow: 3px 3px black;
+   
+}
+
+.active{
+    background-color: #53A338;
+}
+
+#logo{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 500px;
+    left: 10px;
+}
+
+/* ESTILOS MAIN */
+
+main{
+    margin: 100px;
+    padding: 0 150px;
+}
+
+main>div{
+    margin: 30px 0;
+}
+
+.actividad, .parrafo {
+    margin: 0 20px;
+}
+
+main>p{
+    margin: 20px 0;
+    padding: 5px 0;
+}
+
+/* ESTILOS GALERIA PARA QUE NO SE MUESTRE */
+
+#galery{
+    display: none;
+}
