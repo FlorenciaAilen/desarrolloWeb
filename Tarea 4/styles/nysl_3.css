@@ -327,6 +327,9 @@ legend>input{
     align-items: center;  
 }
 
+.row>label>input{
+    width: auto;
+}
 
 button{
     background-color: var(--main-color);
