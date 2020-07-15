@@ -32,89 +32,96 @@
         <div>
             <form action="show_data.html">
                 
-                <fieldset>
-                    <label>Player's First Name:
-                        <input type="text" name="username" required>
-                    </label>
+                <fieldset class="first">
 
-                    <label>Last Name:
-                        <input type="text" name="lastname" required>
-                    </label>
-
-                    <label>Street Address:
-                        <input type="text" name="adress" required>
-                    </label>
-
-                    <label>City:
-                     <input type="text" name="city" required>
-                    </label>
-
-                    <label>Zip Code:
-                        <input type="number" name="zip-code" placeholder="1450" required>
-                    </label>
-
-                    <label>Birth Date:
-                     <input type="date" name="birth-day" required>
-                    </label>
-
-                    <label>Street Address
-                        <input type="text" name="adress" required> 
+                    <label>
+                        <input type="text" name="username" placeholder="Player's First Name" required>
                     </label>
 
                     <label>
-                        Gender:
-                        <input type="radio" name="gender" value="Female"> Female
-                    </label>
-                        
-                    <label>
-                        <input type="radio" name="gender" value="Male"> Male
+                        <input type="text" name="lastname" placeholder="Last Name" required>
                     </label>
 
                     <label>
-                        <input type="radio" name="gender" value="Other"> Other
-                    </label>
-
-                    <label>Grade:
-                        <input type="radio" name="grade" value="pre-school">Pre-School
+                        <input type="text" name="adress" placeholder="Street Address" required>
                     </label>
 
                     <label>
-                        <input type="radio" name="grade" value="1st"> 1st
+                     <input type="text" name="city" placeholder="City" required>
                     </label>
 
                     <label>
-                        <input type="radio" name="grade" value="2nd"> 2nd
+                        <input type="number" name="zip-code" placeholder="Zip Code: 1450" required>
                     </label>
 
                     <label>
-                        <input type="radio" name="grade" value="3rd"> 3rd
+                     <input type="text" name="birth-day" placeholder="Birth Date: mm/dd/yyyy" required>
                     </label>
 
                     <label>
-                        <input type="radio" name="grade" value="4th"> 4th
+                        <input type="text" name="adress" placeholder="Street Address" required> 
                     </label>
-
-                    <label>
-                        <input type="radio" name="grade" value="5th"> 5th
-                    </label>
+                   
                     
-                    <label>Parent/Guardian:
-                        <input type="text" name="parent" required>
+                    <div class="row">
+                        <label>Gender:
+                            <input type="radio" name="gender" value="Female"> Female
+                        </label>
+                            
+                        <label>
+                            <input type="radio" name="gender" value="Male"> Male
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender" value="Other"> Other
+                        </label>
+                    </div>
+                    
+                    <div  class="row">
+                        <label>Grade:
+                            <input type="radio" name="grade" value="pre-school">Pre-School
+                        </label>
+
+                        <label>
+                            <input type="radio" name="grade" value="1st"> 1st
+                        </label>
+
+                        <label>
+                            <input type="radio" name="grade" value="2nd"> 2nd
+                        </label>
+
+                        <label>
+                            <input type="radio" name="grade" value="3rd"> 3rd
+                        </label>
+
+                        <label>
+                            <input type="radio" name="grade" value="4th"> 4th
+                        </label>
+
+                        <label>
+                            <input type="radio" name="grade" value="5th"> 5th
+                        </label>
+                    </div>
+                    
+                    
+                    <label>
+                        <input type="text" name="parent" placeholder="Parent/Guardian" required>
                     </label>
 
-                    <label>Contact Phone:
-                        <input type="tel" name="phone" required>
+                    <label>
+                        <input type="tel" name="phone" placeholder="Contact Phone" required>
                     </label>
 
-                    <label>Contact Email:
-                        <input type="email" name="email" placeholder="name@domain.com" required>
+                    <label>
+                        <input type="email" name="email" placeholder="Email: name@domain.com" required>
                     </label>
+                  
                 </fieldset>
 
                 <fieldset>
 
                     <legend><strong>Which elementary schools do you live near?</strong></legend>
-                   
+                      
                         <label>First Closest School:
                             <select name="school">
                                 <option name="school" value="Aj-Katzenmaier" selected>Aj Katzenmaier</option>
@@ -142,42 +149,47 @@
 
                 <fieldset>
                     <legend><strong>What position(s) do you normally play?</strong> (check all that apply)</legend>
+                    
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="position" value="Forward">Forward
+                            </label>
 
-                    <label>
-                        <input type="checkbox" name="position" value="Forward">Forward
-                    </label>
+                            <label>
+                                <input type="checkbox" name="position" value="Mildfield">Mildfield
+                            </label>
 
-                    <label>
-                        <input type="checkbox" name="position" value="Mildfield">Mildfield
-                    </label>
+                            <label>
+                                <input type="checkbox" name="position" value="Defende">Defende
+                            </label>
 
-                    <label>
-                        <input type="checkbox" name="position" value="Defende">Defende
-                    </label>
-
-                    <label>
-                        <input type="checkbox" name="position" value="Goalkeeper">Goalkeeper
-                    </label>
+                            <label>
+                                <input type="checkbox" name="position" value="Goalkeeper">Goalkeeper
+                            </label>
+                        </div>
+                    
                 </fieldset>
 
                 <fieldset>
                     <legend><strong>What position(s) do you want to play?</strong> (check all that apply)</legend>
 
-                    <label>
-                        <input type="checkbox" name="position" value="Forward">Forward
-                    </label>
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="position" value="Forward">Forward
+                            </label>
 
-                    <label>
-                        <input type="checkbox" name="position" value="Mildfield">Mildfield
-                    </label>
+                            <label>
+                                <input type="checkbox" name="position" value="Mildfield">Mildfield
+                            </label>
 
-                    <label>
-                        <input type="checkbox" name="position" value="Defende">Defende
-                    </label>
+                            <label>
+                                <input type="checkbox" name="position" value="Defende">Defende
+                            </label>
 
-                    <label>
-                        <input type="checkbox" name="position" value="Goalkeeper">Goalkeeper
-                    </label>
+                            <label>
+                                <input type="checkbox" name="position" value="Goalkeeper">Goalkeeper
+                            </label>
+                        </div>
                 </fieldset>
 
                 <fieldset>
@@ -221,19 +233,21 @@
 
                 <p>By signing below, I hereby agree and authorrize the above. In addition, by signing below, I also acknowledge that I have read the
                 cancellation policy and agree to its terms. </p>
-
-                <label>Parent/Guardian Signature:
-                    <input type="text" name="parent-signature" required>
-                </label>
-
-                <label>Date:
-                    <input type="date" name="date" required>
-                </label>
-
-                <button name="submit">
-                    <strong>Send Us</strong> 
-                </button>
                   
+                <label>
+                    <input type="text" name="parent-signature" placeholder="Parent/Guardian Signature" required>
+                </label>
+
+                <label>
+                    <input type="text" name="date" placeholder="Date: mm/dd/yyyy" required>
+                </label>
+              
+                <div id="button">
+                    <button name="submit">
+                        <strong>Send Us</strong> 
+                    </button>
+                </div>
+                
 
             </form>
         </div>
