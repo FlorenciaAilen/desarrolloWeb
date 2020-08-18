@@ -1,0 +1,67 @@
+*{
+    font-family: 'Oswald', sans-serif
+}
+
+/*HEADER*/
+#logo{
+    height: 60px;
+    width: 60px;
+    margin-left: 5px;
+    padding-bottom: 1%;
+}
+
+.mail{
+    margin-left: 60vw;
+    color: #000;
+}
+
+h1{
+    font-size: 300%;
+    margin-left: 2px;
+    padding-top: 2%;
+}
+
+/*MAIN*/
+
+#lupa-home{
+    height: 200px;
+    width: 200px;
+    float: right;
+    margin: 20px;
+}
+
+/*TABLE*/
+table{
+    text-align: center;
+}
+
+footer>p{
+    font-size: 14px;
+}
+
+.bg-ligth2{
+    background-color: rgb(228, 235, 235);
+}
+/*MEDIA QUERIES*/
+
+ @media only screen and (min-width: 780px){
+    .mail{
+        margin-left: 70%; 
+    }
+
+    h1{
+        margin-left: 5px;
+    }
+} 
+
+@media only screen and (min-width: 992px){
+   .mail{
+        margin-left: 76%; 
+    }
+
+    /*MAIN*/
+    #lupa-home{
+        margin-left: 20px;
+        margin-right: 60px;
+    }
+}

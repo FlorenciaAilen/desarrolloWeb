@@ -196,6 +196,9 @@ function invertirNum (number){
     console.log(numero);
 }
 
+console.log("INVERTIR NUMERO 1234:");
+invertirNum(1234);
+
 //otra forma
 function invertirNum2 (number){
    
@@ -212,6 +215,9 @@ function invertirNum2 (number){
     console.log(numInvertido.join(''));
 }
 
+console.log("INVERTIR NUMERO 1234 CON 2DA FUNCION:");
+invertirNum2(1234);
+
 
 //EJERCICIO 2
 //escriba una función de JavaScript que devuelva una cadena en orden alfabético.
@@ -220,6 +226,9 @@ function alfabeticamente (palabra){
 
     console.log(palabra.split('').sort().join(''));
 }
+
+console.log("Devolver cadena en orden alfabetico:");
+alfabeticamente("florencia");
 
 //otra forma
 function alfabeticamente2 (string){
@@ -240,12 +249,21 @@ function alfabeticamente2 (string){
     console.log(array.join(''));
 }
 
+console.log("Devolver cadena en orden alfabetico con segunda funcion:");
+alfabeticamente2("florencia");
+
+
 //EJERCICIO 3 escriba una función de JavaScript que convierta
 // la primera letra de cada palabra a mayúsculas.
 
 function letraMayus (palabra){
-    return palabra.split(' ').map(e => e[0].toUpperCase() + e.slice(1)).join(" ");
+    var resultado = palabra.split(' ').map(e => e[0].toUpperCase() + e.slice(1)).join(" ");
+    console.log(resultado);
 }
+
+console.log("Primera letra de cada palabra a mayúsculas:");
+letraMayus("habia una vez una princesa");
+
 
 //otra forma
 function letraMayus2 (string){
@@ -261,6 +279,10 @@ function letraMayus2 (string){
 
     console.log(arrayPalabra.join(' ' ));
 }
+
+console.log("Primera letra de cada palabra a mayúsculas:");
+letraMayus2("habia una vez una princesa");
+
 
 //Ejercicio 4: escriba una función de JavaScript que encuentre la palabra más larga en una frase.
 
@@ -281,4 +303,8 @@ function masLarga (string){
 
     console.log(palabraLarga);
 } 
+
+console.log("Palabra mas larga:");
+masLarga("habia una vez una princesa");
+
 
