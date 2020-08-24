@@ -12,11 +12,43 @@ function read(){
     }
 }
 
-//CREANDO LAS TABLAS DE SENADORES Y DE CONGRESS
-function creandoTablas (array,identificador){
-  let members = array.results[0].members;
+//FUNCION QUE ME INGRESA LOS DATOS DE LOS POLITICOS CUANDO SE LLAMA A LA FUNCIPN
+function rellenarTabla (array, tbody){
 
-  let table = identificador;
+  let tr = document.createElement('tr');
+  let td1 = document.createElement('td');
+  let a = document.createElement('a');
+
+  a.innerText = array.first_name + ' ' + (array.middle_name || '') + ' ' + array.last_name;
+  a.setAttribute('href',`${array.url}`);
+  a.setAttribute('target','_blank');
+
+  td1.appendChild(a);
+
+  let td2 = document.createElement('td');
+  td2.innerText = array.party;
+
+  let td3 = document.createElement('td');
+  td3.innerText = array.state;
+  td3.classList.add("state")
+
+  let td4 = document.createElement('td');
+  td4.innerText = array.seniority;
+
+  let td5 = document.createElement('td');
+  td5.innerText = array.votes_with_party_pct + '%';
+
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  tr.appendChild(td3);
+  tr.appendChild(td4);
+  tr.appendChild(td5);
+
+  tbody.appendChild(tr);
+}
+
+//FUNCION QUE ME CREA EL THEAD DE LA TABLA CUANDO LLAMO A LA FUNCION
+function creandoTHead(table){
 
   let thead = document.createElement("thead");
   let tr = document.createElement('tr');
@@ -45,45 +77,26 @@ function creandoTablas (array,identificador){
   thead.appendChild(tr);
 
   table.appendChild(thead);
+}
+
+//CREANDO LAS TABLAS DE SENADORES Y DE LOS CONGRESISTAS
+function creandoTablas (array,identificador){
+  let members = array.results[0].members;
+  let table = identificador;
+
+   //creando el thead con su respectivo tr y th
+  creandoTHead(table);
 
   let tbody = document.createElement('tbody');
 
+  //RELLENANDO LA TABLA CON TODOS LOS MIEMBROS
   for(let i = 0 ; i < members.length ; i++){
-
-    let tr = document.createElement('tr');
-    let td1 = document.createElement('td');
-    let a = document.createElement('a');
-
-    a.innerText = members[i].first_name + ' ' + (members[i].middle_name || '') + ' ' + members[i].last_name;
-    a.setAttribute('href',`${members[i].url}`);
-    a.setAttribute('target','_blank');
-
-    td1.appendChild(a);
-
-    let td2 = document.createElement('td');
-    td2.innerText = members[i].party;
-
-    let td3 = document.createElement('td');
-    td3.innerText = members[i].state;
-    td3.classList.add("state");
-
-    let td4 = document.createElement('td');
-    td4.innerText = members[i].seniority;
-
-    let td5 = document.createElement('td');
-    td5.innerText = members[i].votes_with_party_pct + '%';
-
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    tr.appendChild(td4);
-    tr.appendChild(td5);
-
-    tbody.appendChild(tr);
+    rellenarTabla (members[i], tbody)
   }
   table.appendChild(tbody);
 }
 
+//LLAMANDO A LA FUNCION CRRANDOTABLAS
 if(document.getElementById("table-senate")){
     creandoTablas(dataSenate,document.getElementById("table-senate"));
 }
@@ -94,13 +107,18 @@ if(document.getElementById("table-house")){
 
 // FILTROS PARA LA TABLA
 
-// AGREGANDO UN LISTENER A LOS CHECKBOXES
-
+// AGREGANDO UN LISTENER A LOS CHECKBOXES Y SELECT
+if(document.getElementById("table-senate")){
 document.querySelectorAll("input[name=party]").forEach(e => e.addEventListener('change',function(){createTable(dataSenate, document.getElementById("table-senate"))}));
-document.querySelectorAll("input[name=party]").forEach(e => e.addEventListener('change',function(){createTable(dataHouse, document.getElementById("table-house"))}));
 document.querySelector("#state-filter").addEventListener('change',function(){createTable(dataSenate, document.getElementById("table-senate"))});
-document.querySelector("#state-filter").addEventListener('change',function(){createTable(dataHouse, document.getElementById("table-house"))});
+}
 
+if(document.getElementById("table-house")){
+document.querySelectorAll("input[name=party]").forEach(e => e.addEventListener('change',function(){createTable(dataHouse, document.getElementById("table-house"))}));
+document.querySelector("#state-filter").addEventListener('change',function(){createTable(dataHouse, document.getElementById("table-house"))});
+}
+
+//CREANDO LAS TABLAS DE SENADORES Y DE LOS CONGRESISTAS CUANDO SE FILTRA LA TABLA
 function createTable (array, identificador){
   let members = array.results[0].members;
   let table = identificador;
@@ -109,172 +127,41 @@ function createTable (array, identificador){
   table.innerHTML = '';
 
   //creando el thead con su respectivo tr y th
-  let thead = document.createElement("thead");
-  let tr = document.createElement('tr');
-
-  let th1 = document.createElement('th');
-  th1.innerText = "Name";
-
-  let th2 = document.createElement('th');
-  th2.innerText = "Party";
-
-  let th3 = document.createElement('th');
-  th3.innerText = "State";
-
-  let th4 = document.createElement('th');
-  th4.innerText = "Seniority";
-
-  let th5 = document.createElement('th');
-  th5.innerText = "Total Votes";
-
-  tr.appendChild(th1);
-  tr.appendChild(th2);
-  tr.appendChild(th3);
-  tr.appendChild(th4);
-  tr.appendChild(th5);
-
-  thead.appendChild(tr);
-
-  table.appendChild(thead);  //FIN DEL THEAD
+  creandoTHead(table);
 
   //CREANDO EL TBODY
   let tbody = document.createElement('tbody');
+
   // CREANDO UN ARRAY CON LOS CHECKBOXES QUE ESTAN SELECCIONADOS
   let checkedParties = Array.from(document.querySelectorAll("input[name=party]:checked")).map(e=> e.value);
+  //VALOR DEL OPTION QUE ESTA SELECCIONADO
   let checkedStates = $("#state-filter").val();
-
-  
 
   for(let i = 0 ; i < members.length ; i++){
 
-    // COMPROBANDO QUE SE MUSTRE SOLO LOS MIEMBROS QUE TIENEN UN PARTIDO QUE ESTA SELECCIONADO
+    // COMPROBANDO QUE SE MUSTRE SOLO LOS MIEMBROS QUE TIENEN UN PARTIDO Y ESTADO QUE ESTA SELECCIONADO 
     if(checkedParties.includes(members[i].party) && members[i].state == checkedStates){
 
-      let tr = document.createElement('tr');
-      let td1 = document.createElement('td');
-      let a = document.createElement('a');
-
-      a.innerText = members[i].first_name + ' ' + (members[i].middle_name || '') + ' ' + members[i].last_name;
-      a.setAttribute('href',`${members[i].url}`);
-      a.setAttribute('target','_blank');
-
-      td1.appendChild(a);
-
-      let td2 = document.createElement('td');
-      td2.innerText = members[i].party;
-
-      let td3 = document.createElement('td');
-      td3.innerText = members[i].state;
-      td3.classList.add("state")
-
-      let td4 = document.createElement('td');
-      td4.innerText = members[i].seniority;
-
-      let td5 = document.createElement('td');
-      td5.innerText = members[i].votes_with_party_pct + '%';
-
-      tr.appendChild(td1);
-      tr.appendChild(td2);
-      tr.appendChild(td3);
-      tr.appendChild(td4);
-      tr.appendChild(td5);
-
-      tbody.appendChild(tr);
-
+      rellenarTabla (members[i],tbody);
     }
+    // COMPROBANDO QUE SE MUSTRE SOLO LOS MIEMBROS QUE TIENEN UN PARTIDO QUE ESTA SELECCIONADO Y TODOS LOS ESTADOS
     else if(checkedParties.includes(members[i].party) && "All" == checkedStates){
-      let tr = document.createElement('tr');
-      let td1 = document.createElement('td');
-      let a = document.createElement('a');
-
-      a.innerText = members[i].first_name + ' ' + (members[i].middle_name || '') + ' ' + members[i].last_name;
-      a.setAttribute('href',`${members[i].url}`);
-      a.setAttribute('target','_blank');
-
-      td1.appendChild(a);
-
-      let td2 = document.createElement('td');
-      td2.innerText = members[i].party;
-
-      let td3 = document.createElement('td');
-      td3.innerText = members[i].state;
-      td3.classList.add("state")
-
-      let td4 = document.createElement('td');
-      td4.innerText = members[i].seniority;
-
-      let td5 = document.createElement('td');
-      td5.innerText = members[i].votes_with_party_pct + '%';
-
-      tr.appendChild(td1);
-      tr.appendChild(td2);
-      tr.appendChild(td3);
-      tr.appendChild(td4);
-      tr.appendChild(td5);
-
-      tbody.appendChild(tr);
+      rellenarTabla (members[i], tbody);
     }
-    else if (checkedParties.length == 0){
-      let tr = document.createElement('tr');
-      let td1 = document.createElement('td');
-      let a = document.createElement('a');
-
-      a.innerText = members[i].first_name + ' ' + (members[i].middle_name || '') + ' ' + members[i].last_name;
-      a.setAttribute('href',`${members[i].url}`);
-      a.setAttribute('target','_blank');
-
-      td1.appendChild(a);
-
-      let td2 = document.createElement('td');
-      td2.innerText = members[i].party;
-
-      let td3 = document.createElement('td');
-      td3.innerText = members[i].state;
-      td3.classList.add("state")
-
-      let td4 = document.createElement('td');
-      td4.innerText = members[i].seniority;
-
-      let td5 = document.createElement('td');
-      td5.innerText = members[i].votes_with_party_pct + '%';
-
-      tr.appendChild(td1);
-      tr.appendChild(td2);
-      tr.appendChild(td3);
-      tr.appendChild(td4);
-      tr.appendChild(td5);
-
-      tbody.appendChild(tr);
-
+    // COMPROBANDO QUE SE MUSTRE TODOS LOS MIEMBROS CON EL ESTADO SELECCIONADO
+    else if (checkedParties.length == 0 && members[i].state == checkedStates){
+      rellenarTabla (members[i], tbody);
     }
-    
+     // COMPROBANDO QUE SE MUSTRE TODOS LOS MIEMBROS CON TODOS LOS ESTADOS
+    else if (checkedParties.length == 0 && "All" == checkedStates){
+      rellenarTabla (members[i], tbody);
+    }
   }
     // AGREFANDO EL TBODY AL TABLE
     table.appendChild(tbody);
 }
 
-
-
-// function updateUI() {
-
-//   let state = $("#state-filter").val();
-//   var states = state ? [ state ] : [];
-
-//     $("#table-senate tbody tr").each(function () {
-//       var state = $(this).find(".state").text();
-//       var stateSelected = isIncluded(state, states);
-//       $(this).toggle(stateSelected);
-//     });
-
-// }
-
-// // x is included if lst is empty or contains x
-// function isIncluded(x, lst) {
-//   return lst.length === 0 || lst.indexOf(x) != -1;
-// }
-
-// $("#filter-form").on("change", updateUI);
-
+// FUNCION QUE ME AGREGA LOS ESTADOS DENTRO DEL SELECT
 function addState(array){
   let members = array.results[0].members;
   let states = [];
@@ -301,6 +188,8 @@ function addState(array){
 
 }
 
+//LLAMANDO A LA FUNCION ADDSTATES
+
 if(document.getElementById("table-senate")){
   addState(dataSenate);
 }
@@ -309,6 +198,7 @@ if(document.getElementById("table-house")){
   addState(dataHouse);
 }
 
+//FUNCION QUE ME CREA UN ARRAY SACANDO ELEMENTOS REPETIDOS
 function sinRepetir (array){
 
   array.sort();

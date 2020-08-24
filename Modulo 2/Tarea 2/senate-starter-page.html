@@ -14,12 +14,14 @@
         <div id="container">
             <script src="https://kit.fontawesome.com/5054ae49f1.js" crossorigin="anonymous"></script>
 
-        <header class="d-flex">            
+          <!-- HEADER-->
+          <header class="d-flex">            
             <img id="logo" class="mt-auto " src="style/img/logoHome.png" alt="">
             <h1 class="mt-auto" >TGIF</h1>
             <a class=" mail mt-auto" href="mailto:info@tgif.net?subject=Reaching%20Out&body=Hello%20TGIF:"><i class="fas fa-envelope"></i> info@tgif.net</a>
           </header>
 
+          <!-- NAV -->
           <nav class="navbar navbar-expand-sm navbar-light bg-ligth2">
     
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -40,46 +42,49 @@
             </div>
           </nav>
 
-        <!--Table container-->
-        <main>
-            <h2 class="m-3">Senators</h2>
-            <p class="m-3">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+             <!--MAIN-->
+            <main>
+              <h2 class="m-3">Senators</h2>
+              <p class="m-3">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
 
-            <div >
-            <form class="m-3" id="filter-form" >
-            
-              <label class="m-1">
-                Filter by Party:
-                <input class="m-1" type="checkbox"  name="party" value="R" id="R">Republican
-              </label>
+              <!-- FORM-->
+              <form class="m-3" id="filter-form" >
               
-              <label class="m-1">
-                <input class="m-1" type="checkbox" name="party" value="D" id="D">Democrat
-              </label>
+                <label class="m-1">
+                  Filter by Party:
+                  <input class="m-1" type="checkbox"  name="party" value="R" id="R">Republican
+                </label>
+                
+                <label class="m-1">
+                  <input class="m-1" type="checkbox" name="party" value="D" id="D">Democrat
+                </label>
 
-              <label class="m-1 label">
-                <input class="m-1" type="checkbox" name="party" value="ID" id="ID">Independent
-              </label>
+                <label class="m-1 label">
+                  <input class="m-1" type="checkbox" name="party" value="ID" id="ID">Independent
+                </label>
 
-              <label class="label-filter">
-                Filter by State:
+                <label class="label-filter">
+                  Filter by State:
 
-              <select id="state-filter" class="filter"></select>  
+                <select id="state-filter" class="filter"></select>  
 
-              </label>
-            </form>
-         
-            <div class="d-flex justify-content-center">
-            <table style="border: hidden" id="table-senate" class="table table-ligth table-striped table-hover w-50 table-sm"></table>
-            </div>
-    
-          </main>
+                </label>
+              </form>
+              
+              <!-- TABLE -->
+              <div class="d-flex justify-content-center">
+              <table id="table-senate" class="table table-ligth table-striped table-hover w-50 table-sm .table-borderless"></table>
+              </div>
+      
+            </main>
 
-        <footer class="footer center p-3 d-flex justify-content-center">
-            <p>&copy; 2016 TGIF | All Rights Reserved</p>
-        </footer>
+              <!-- FOOTER -->
+            <footer class="footer center p-3 d-flex justify-content-center">
+                <p>&copy; 2016 TGIF | All Rights Reserved</p>
+            </footer>
         </div>
 
+        <!-- JAVASCRIPT-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

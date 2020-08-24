@@ -1,5 +1,10 @@
+/*CAMBIOS GENERALES*/
 *{
     font-family: 'Oswald', sans-serif
+}
+
+.bg-ligth2{
+    background-color: rgb(228, 235, 235);
 }
 
 /*HEADER*/
@@ -35,12 +40,10 @@ table{
     text-align: center;
 }
 
+/*FOOTER*/
+
 footer>p{
     font-size: 14px;
-}
-
-.bg-ligth2{
-    background-color: rgb(228, 235, 235);
 }
 
 /*FORMS*/
@@ -51,10 +54,14 @@ footer>p{
   height: 10px;
 }
 
- .label-filter{
-     margin-left: 50%;
- }
+
 /*MEDIA QUERIES*/
+
+@media only screen and (min-width: 611px){
+    .label-filter{
+     margin-left: 8%;
+    }
+}
 
  @media only screen and (min-width: 780px){
     .mail{
@@ -63,6 +70,10 @@ footer>p{
 
     h1{
         margin-left: 5px;
+    }
+
+    .label-filter{
+        margin-left: 26%;
     }
 } 
 
@@ -75,5 +86,9 @@ footer>p{
     #lupa-home{
         margin-left: 20px;
         margin-right: 60px;
+    }
+
+    .label-filter{
+        margin-left: 45%;
     }
 }
