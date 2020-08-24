@@ -43,24 +43,35 @@
           
           <main>
                         <!--Table container-->
-                       
+                      
                             <h2 class="m-3">Congressmen</h2>
                             <p class="m-3">The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
                             <p class="m-3">Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
                              
+                            <form class="m-3" >
+                              <label class="m-1">
+                                Filter by Party:
+                                <input class="m-1" type="checkbox" name="party" value="R" id="R">Republican
+                              </label>
+                              
+                              <label class="m-1">
+                                <input class="m-1" type="checkbox" name="party" value="D" id="D">Democrat
+                              </label>
+                
+                              <label class="m-1">
+                                <input class="m-1" type="checkbox" name="party" value="ID" id="ID">Independent
+                              </label>
+
+                              <label class="label-filter">
+                                Filter by State:
+                              <select id="state-filter" class="filter"></select>  
+                              </label>
+                            </form>
+
+                            
                             <div class="d-flex justify-content-center">
-                              <table id="table-house" class="table table-ligth table-striped table-hover w-75 table-sm" >
-                                <thead>
-                                  <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Party</th>
-                                    <th scope="col">State</th>
-                                    <th scope="col">Seniority</th>
-                                    <th scope="col">Total Votes</th>
-                                  </tr>
-                                </thead>
-                  
-                              </table>
+
+                              <table id="table-house" class="table table-ligth table-striped table-hover w-50 table-sm" > </table>
                           </div>  
                          
           </main>

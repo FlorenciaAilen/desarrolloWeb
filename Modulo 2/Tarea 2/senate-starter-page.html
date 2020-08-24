@@ -41,42 +41,39 @@
           </nav>
 
         <!--Table container-->
-        <div>
+        <main>
             <h2 class="m-3">Senators</h2>
             <p class="m-3">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
 
-            <div id="checkboxes" class="m-3" >
+            <div >
+            <form class="m-3" id="filter-form" >
+            
               <label class="m-1">
                 Filter by Party:
-                <input class="m-1" type="checkbox" Checked  name="checkboxes" value="Republican">Republican
+                <input class="m-1" type="checkbox"  name="party" value="R" id="R">Republican
               </label>
               
               <label class="m-1">
-                <input class="m-1" type="checkbox" name="checkboxes" value="Democrat">Democrat
+                <input class="m-1" type="checkbox" name="party" value="D" id="D">Democrat
               </label>
 
-              <label class="m-1">
-                <input type="checkbox" name="checkboxes" value="Independent">Independent
+              <label class="m-1 label">
+                <input class="m-1" type="checkbox" name="party" value="ID" id="ID">Independent
               </label>
-            </div>
 
+              <label class="label-filter">
+                Filter by State:
+
+              <select id="state-filter" class="filter"></select>  
+
+              </label>
+            </form>
+         
             <div class="d-flex justify-content-center">
-            <table id="table-senate" class="table table-ligth table-striped table-hover w-75 table-sm" >
-              <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Party</th>
-                  <th scope="col">State</th>
-                  <th scope="col">Seniority</th>
-                  <th scope="col">Total Votes</th>
-                </tr>
-
-              </thead>
-
-            </table>
-          </div>
-        </div> 
-       
+            <table style="border: hidden" id="table-senate" class="table table-ligth table-striped table-hover w-50 table-sm"></table>
+            </div>
+    
+          </main>
 
         <footer class="footer center p-3 d-flex justify-content-center">
             <p>&copy; 2016 TGIF | All Rights Reserved</p>
