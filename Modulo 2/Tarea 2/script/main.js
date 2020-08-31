@@ -140,22 +140,15 @@ function createTable (array, identificador){
   for(let i = 0 ; i < members.length ; i++){
 
     // COMPROBANDO QUE SE MUSTRE SOLO LOS MIEMBROS QUE TIENEN UN PARTIDO Y ESTADO QUE ESTA SELECCIONADO 
-    if(checkedParties.includes(members[i].party) && members[i].state == checkedStates){
+    if(checkedParties.includes(members[i].party) && (members[i].state == checkedStates || "All" == checkedStates)){
 
       rellenarTabla (members[i],tbody);
     }
-    // COMPROBANDO QUE SE MUSTRE SOLO LOS MIEMBROS QUE TIENEN UN PARTIDO QUE ESTA SELECCIONADO Y TODOS LOS ESTADOS
-    else if(checkedParties.includes(members[i].party) && "All" == checkedStates){
+    // COMPROBANDO QUE SE MUSTRE TODOS LOS MIEMBROS Y EL ESTADO QUE ESTA SELECCIONADO 
+    else if (checkedParties.length == 0 && (members[i].state == checkedStates || "All" == checkedStates)){
       rellenarTabla (members[i], tbody);
     }
-    // COMPROBANDO QUE SE MUSTRE TODOS LOS MIEMBROS CON EL ESTADO SELECCIONADO
-    else if (checkedParties.length == 0 && members[i].state == checkedStates){
-      rellenarTabla (members[i], tbody);
-    }
-     // COMPROBANDO QUE SE MUSTRE TODOS LOS MIEMBROS CON TODOS LOS ESTADOS
-    else if (checkedParties.length == 0 && "All" == checkedStates){
-      rellenarTabla (members[i], tbody);
-    }
+     
   }
     // AGREFANDO EL TBODY AL TABLE
     table.appendChild(tbody);
