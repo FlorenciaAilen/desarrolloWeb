@@ -18,17 +18,21 @@
           <header class="d-flex">            
             <img id="logo" class="mt-auto " src="style/img/logoHome.png" alt="">
             <h1 class="mt-auto" >TGIF</h1>
-            <a class=" mail mt-auto" href="mailto:info@tgif.net?subject=Reaching%20Out&body=Hello%20TGIF:"><i class="fas fa-envelope"></i> info@tgif.net</a>
+            <a class=" mail mt-auto ml-auto" href="mailto:info@tgif.net?subject=Reaching%20Out&body=Hello%20TGIF:"><i class="fas fa-envelope"></i> info@tgif.net</a>
           </header>
 
           <!-- NAV -->
           <nav class="navbar navbar-expand-sm navbar-light bg-ligth2">
-    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+           </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
+
                 <li class="nav-item active">
                   <a class="nav-link" href="home-starter-page.html">Home <span class="sr-only">(current)</span></a>
                 </li>
+
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Congress 133
@@ -38,6 +42,27 @@
                     <a class="dropdown-item" href="house-starter-page.html">House</a>
                   </div>
                 </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Attendance
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="senate-attendance.html">Senate</a>
+                    <a class="dropdown-item" href="house-attendance.html">House</a>
+                  </div>
+                </li>
+  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Party Loyalty
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                    <a class="dropdown-item" href="house-party-loyalty.html">House</a>
+                  </div>
+                </li>
+
               </ul>
             </div>
           </nav>
@@ -73,7 +98,7 @@
               
               <!-- TABLE -->
               <div class="d-flex justify-content-center">
-              <table id="table-senate" class="table table-ligth table-striped table-hover w-50 table-sm .table-borderless"></table>
+              <table id="table-senate" class="table table-ligth table-striped table-hover w-50 table-sm table-borderless"></table>
               </div>
       
             </main>

@@ -16,7 +16,6 @@
 }
 
 .mail{
-    margin-left: 60vw;
     color: #000;
 }
 
@@ -35,12 +34,40 @@ h1{
     margin: 20px;
 }
 
+.linea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.linea>div{
+    width: 85%;
+    height: 2px;
+    background-color: rgb(163, 168, 168);
+}
+
+
 /*TABLE*/
 table{
     text-align: center;
 }
 
+.tabla{
+    overflow:scroll;
+    height:400px;
+    width:600px;
+}
+
+.tabla table{
+    width:500px;
+}
+
 /*FOOTER*/
+
+footer{
+    background-color: rgb(228, 235, 235);
+}
 
 footer>p{
     font-size: 14px;
@@ -75,6 +102,8 @@ footer>p{
     .label-filter{
         margin-left: 26%;
     }
+
+    
 } 
 
 @media only screen and (min-width: 992px){
@@ -91,4 +120,6 @@ footer>p{
     .label-filter{
         margin-left: 45%;
     }
+
+  
 }
