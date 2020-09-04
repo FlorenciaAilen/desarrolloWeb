@@ -63,7 +63,7 @@ if(document.getElementById("table-house-loyalty") || document.getElementById("ta
       }
     }
    
-  }
+}
 
   //LLAMANDO A LA FUNCION
  if(document.getElementById("table-senate-loyalty") || document.getElementById("table-senate-attendance")){
@@ -76,7 +76,7 @@ if(document.getElementById("table-house-loyalty") || document.getElementById("ta
   avgParty(HouseStatistics.democrats, HouseStatistics,dataHouse);
   avgParty(HouseStatistics.republicans, HouseStatistics,dataHouse);
   avgParty(HouseStatistics.independent, HouseStatistics,dataHouse);
- }
+}
   
 
  // FILTRANDO EL 10% DE LOS MIEMBROS QUE CUMPLEN CIERTA CONDICION

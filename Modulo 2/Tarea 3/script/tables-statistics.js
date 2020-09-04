@@ -160,7 +160,7 @@ if(document.getElementById("table-senate-least-loyalty") || document.getElementB
 if(document.getElementById("table-house-least-loyalty") || document.getElementById("table-house-most-attendance")){
     createTabletLoyalty(HouseStatistics.leastLoyal,document.getElementById("table-house-least-loyalty"));
     createTabletLoyalty(HouseStatistics.mostLoyal,document.getElementById("table-house-most-loyalty"));
-  }
+}
 
 
 // ATTENDANCE
@@ -262,11 +262,11 @@ function createTabletGlanceAttendance (array,identificador){
 
 if(document.getElementById("table-senate-attendance")){
     createTabletGlanceAttendance(SenateStatistics,document.getElementById("table-senate-attendance"));
-  }
+}
   
 if(document.getElementById("table-house-attendance")){
     createTabletGlanceAttendance(HouseStatistics,document.getElementById("table-house-attendance"));
-  }
+}
 
   // tablas de los que son menos y mas comprometidos
 function createTabletEngaged (array,identificador){

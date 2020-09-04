@@ -56,11 +56,11 @@ table{
 .tabla{
     overflow:scroll;
     height:400px;
-    width:600px;
+    width:550px;
 }
 
 .tabla table{
-    width:500px;
+    width:540px;
 }
 
 /*FOOTER*/
@@ -88,12 +88,11 @@ footer>p{
     .label-filter{
      margin-left: 8%;
     }
+
+ 
 }
 
- @media only screen and (min-width: 780px){
-    .mail{
-        margin-left: 70%; 
-    }
+ @media only screen and (min-width: 769px){
 
     h1{
         margin-left: 5px;
@@ -103,14 +102,18 @@ footer>p{
         margin-left: 26%;
     }
 
+    .tabla{
+        width:310px;
+    }
     
-} 
-
-@media only screen and (min-width: 992px){
-   .mail{
-        margin-left: 76%; 
+    .tabla table{
+        width:300px;
     }
 
+} 
+
+@media only screen and (min-width: 978px){
+ 
     /*MAIN*/
     #lupa-home{
         margin-left: 20px;
@@ -121,5 +124,25 @@ footer>p{
         margin-left: 45%;
     }
 
+    .tabla{
+    width:480px;
+    }
+
+    .tabla table{
+        width:470px;
+    }
+
   
+}
+
+@media only screen and (min-width: 1300px){
+
+    .tabla{
+        width:600px;
+    }
+    
+    .tabla table{
+        width:590px;
+    }
+
 }
