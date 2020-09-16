@@ -1,0 +1,148 @@
+/*CAMBIOS GENERALES*/
+*{
+    font-family: 'Oswald', sans-serif
+}
+
+.bg-ligth2{
+    background-color: rgb(228, 235, 235);
+}
+
+/*HEADER*/
+#logo{
+    height: 60px;
+    width: 50px;
+    margin-left: 5px;
+    padding-bottom: 1%;
+}
+
+.mail{
+    color: #000;
+}
+
+h1{
+    font-size: 300%;
+    margin-left: 2px;
+    padding-top: 2%;
+}
+
+/*MAIN*/
+
+#lupa-home{
+    height: 200px;
+    width: 200px;
+    float: right;
+    margin: 20px;
+}
+
+.linea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.linea>div{
+    width: 85%;
+    height: 2px;
+    background-color: rgb(163, 168, 168);
+}
+
+
+/*TABLE*/
+table{
+    text-align: center;
+}
+
+.tabla{
+    overflow:scroll;
+    height:400px;
+    width:550px;
+}
+
+.tabla table{
+    width:540px;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: rgb(228, 235, 235);
+}
+
+footer>p{
+    font-size: 14px;
+}
+
+/*FORMS*/
+
+#FilterForm{
+  position: relative;
+  left: 60%;
+  height: 10px;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media only screen and (min-width: 611px){
+    .label-filter{
+     margin-left: 8%;
+    }
+
+ 
+}
+
+ @media only screen and (min-width: 769px){
+
+    h1{
+        margin-left: 5px;
+    }
+
+    .label-filter{
+        margin-left: 26%;
+    }
+
+    .tabla{
+        width:310px;
+    }
+    
+    .tabla table{
+        width:300px;
+    }
+
+} 
+
+@media only screen and (min-width: 978px){
+ 
+    /*MAIN*/
+    #lupa-home{
+        margin-left: 20px;
+        margin-right: 60px;
+    }
+
+    .label-filter{
+        margin-left: 45%;
+    }
+
+    .tabla{
+    width:480px;
+    }
+
+    .tabla table{
+        width:470px;
+    }
+
+  
+}
+
+@media only screen and (min-width: 1300px){
+
+    .tabla{
+        width:600px;
+    }
+    
+    .tabla table{
+        width:590px;
+    }
+
+}

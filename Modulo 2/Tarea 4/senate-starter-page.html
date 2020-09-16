@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Senate</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="style/main.css">
+    </head>
+    
+    <body class="d-flex flex-column justify-content-between">
+
+        <div id="container">
+            <script src="https://kit.fontawesome.com/5054ae49f1.js" crossorigin="anonymous"></script>
+
+          <!-- HEADER-->
+          <header class="d-flex">            
+            <img id="logo" class="mt-auto " src="style/img/logoHome.png" alt="">
+            <h1 class="mt-auto" >TGIF</h1>
+            <a class=" mail mt-auto ml-auto" href="mailto:info@tgif.net?subject=Reaching%20Out&body=Hello%20TGIF:"><i class="fas fa-envelope"></i> info@tgif.net</a>
+          </header>
+
+          <!-- NAV -->
+          <nav class="navbar navbar-expand-sm navbar-light bg-ligth2">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+           </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+
+                <li class="nav-item active">
+                  <a class="nav-link" href="home-starter-page.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Congress 133
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Senate</a>
+                    <a class="dropdown-item" href="house-starter-page.html">House</a>
+                  </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Attendance
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="senate-attendance.html">Senate</a>
+                    <a class="dropdown-item" href="house-attendance.html">House</a>
+                  </div>
+                </li>
+  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Party Loyalty
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                    <a class="dropdown-item" href="house-party-loyalty.html">House</a>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </nav>
+
+             <!--MAIN-->
+            <main>
+              <div id="filtered">
+              <h2 class="m-3">Senators</h2>
+              <p class="m-3">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+
+              <!-- FORM-->
+              <form class="m-3" id="filter-form" >
+              
+                <label class="m-1">
+                  Filter by Party:
+                  <input class="m-1" type="checkbox"  name="party" value="R" v-model="checkedParties" id="R">Republican
+                </label>
+                
+                <label class="m-1">
+                  <input class="m-1" type="checkbox" name="party" value="D" v-model="checkedParties" id="D">Democrat
+                </label>
+
+                <label class="m-1 label">
+                  <input class="m-1" type="checkbox" name="party" value="ID" v-model="checkedParties" id="ID">Independent
+                </label>
+
+                <label class="label-filter">
+                  Filter by State:
+
+                <select v-model="checkedState" id="state-filter" class="filter">
+                  <option value="All">All</option>
+                  <option v-for="state in states" :value="state" >{{state}}</option>
+                </select>  
+
+                </label>
+              </form>
+              
+              <!-- TABLE -->
+              <div class="d-flex justify-content-center">
+              <table id="table-senate" class="table table-ligth table-striped table-hover w-50 table-sm table-borderless">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Party</th>
+                    <th>State</th>
+                    <th>Seniority</th>
+                    <th>Total Votes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="member in filteredMembers">
+                    <td>{{member.first_name}} {{(member.middle_name || '')}} {{member.last_name}}</td>
+                    <td>{{member.party}}</td>
+                    <td>{{member.state}}</td>
+                    <td>{{member.seniority}}</td>
+                    <td>{{member.total_votes}}</td>
+                  </tr>
+                </tbody>
+
+              </table>
+              </div>
+            </div>
+            </main>
+
+              <!-- FOOTER -->
+            <footer class="footer center p-3 d-flex justify-content-center">
+                <p>&copy; 2016 TGIF | All Rights Reserved</p>
+            </footer>
+        </div>
+
+        <!-- JAVASCRIPT-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="script/filtered.js"></script>
+        <script src="script/main.js"></script>
+      
+</body>
+</html>
