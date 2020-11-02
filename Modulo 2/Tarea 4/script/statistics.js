@@ -39,14 +39,10 @@ const statistics = new Vue({
             }
 
             //guardando a todos los miembros
-            this.members       = json.results[0].members
-            //guardando cantidad de miembros
-            this.members_total = this.members.length;
+            this.members = json.results[0].members
 
             // filtrando cantidad de miembros por partido
-            this.democrats     = this.members.filter(member => member.party == "D");
-            this.republicans   = this.members.filter(member => member.party == "R");
-            this.independent   = this.members.filter(member => member.party == "ID");
+            this.membersInParty();
 
             // calculando porcentaje de los diferentes partidos
             this.avgParties(this.democrats);
@@ -55,6 +51,16 @@ const statistics = new Vue({
 
             // FILTRANDO EL 10% DE LOS MIEMBROS QUE CUMPLEN CIERTA CONDICION
             this.loyaltyANDattendace();
+        },
+        membersInParty: function(){
+            //guardando cantidad de miembros
+            this.members_total = this.members.length;
+
+            // filtrando cantidad de miembros por partido
+            this.democrats     = this.members.filter(member => member.party == "D");
+            this.republicans   = this.members.filter(member => member.party == "R");
+            this.independent   = this.members.filter(member => member.party == "ID");
+
         },
         avgParties: function (array){
             //sumando todos los promedios en total de todos los partidos
@@ -139,6 +145,48 @@ const statistics = new Vue({
     }
 })
 
+Vue.component("tableAtGlance",{
+    props:[members,table,attendance],
+    template: `<div>
+                <div class="col-12 col-md-6">
+                    <h3 class="float-right">House at a glance</h3>
+                    <table :id=table class="table table-ligth table-striped">
+                        <thead>
+                            <tr>
+                                <th>Party</th>
+                                <th>N° of representants</th>
+                                <th>{{attendance ? '% Missed Voted with Party' :  '% Voted with Party'}}</th>
+                            </tr>
+                        </thead>
 
+                        <tbody>
+                            <tr>
+                                <td>Democrats</td>
+                                <td>{{statistics.democrats.length}}</td>
+                                <td>{{statistics.avg_missed_votes_democrats}}%</td>
+                            </tr>
 
+                            <tr>
+                                <td>Republicans</td>
+                                <td>{{statistics.republicans.length}}</td>
+                                <td>{{statistics.avg_missed_votes_republicans}}%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Independent</td>
+                                <td>{{statistics.independent.length}}</td>
+                                <td>{{statistics.avg_missed_votes_independent}}%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Total</td>
+                                <td>{{statistics.members_total}}</td>
+                                <td>{{statistics.avg_missed_votes_total}}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+               </div>`
+})
 

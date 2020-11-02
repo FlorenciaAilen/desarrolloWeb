@@ -1,0 +1,17 @@
+[
+    {
+        "id"  : "0",
+        "date": "August 4",
+        "info": "NYSL Fundraiser"
+    },
+    {
+        "id"  : "1",
+        "date": "August 16",
+        "info": "Season Kick-off: Meet the teams"
+    },
+    {
+        "id"  : "2",
+        "date": "September 1",
+        "info": "First Game of the Season (Check Game Schedule for details)"
+    }
+]

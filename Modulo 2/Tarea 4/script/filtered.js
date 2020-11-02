@@ -52,3 +52,36 @@ const filtered = new Vue({
         }
     }
 }) 
+
+Vue.component('filtered',{
+    props: ['members','table'],
+    template: `<div>
+                <div class="d-flex justify-content-center">
+                <table id=table class="table table-ligth table-striped table-hover w-50 table-sm table-borderless">
+                <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Party</th>
+                    <th>State</th>
+                    <th>Seniority</th>
+                    <th>Total Votes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="member in members">
+                    <td><a :href="member.url">{{member.first_name}} {{(member.middle_name || '')}} {{member.last_name}}</a></td>
+                    <td>{{member.party}}</td>
+                    <td>{{member.state}}</td>
+                    <td>{{member.seniority}}</td>
+                    <td>{{member.total_votes}}</td>
+                  </tr>
+                </tbody>
+                </table>
+                </div>
+                </div>`
+})
+
+
+
+
+
