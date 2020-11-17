@@ -61,5 +61,16 @@
         color: rgb(177, 214, 159);
     }
 
+     .allInfo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            p{
+                width: 80%;
+            }
+        }
+
 </style>
 
