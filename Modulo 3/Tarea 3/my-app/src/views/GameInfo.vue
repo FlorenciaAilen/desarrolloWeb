@@ -2,14 +2,14 @@
   <div class="gameInfo">
        <form action="">
           <label class="label-filter">
-                <select placeholder="hola" v-model="checkedMonth"  id="month-filter" class="filter">
+                <select v-model="checkedMonth"  id="month-filter" class="filter">
                   <option value="default">Filtered by Month</option>
                   <option v-for="(p,index) in months" :key="index" :value="p">{{p}}</option>
                 </select>  
             </label>
 
             <label class="label-filter">
-                <select placeholder="hola" v-model="checkedTeam"  id="month-filter" class="filter">
+                <select v-model="checkedTeam"  id="month-filter" class="filter">
                   <option value="default">Filtered by Team</option>
                   <option v-for="(p,index) in teams" :key="index" :value="p">{{p}}</option>
                 </select>  
@@ -17,7 +17,7 @@
       </form>
     <b-container class="bv-example-row">
     <b-row>
-    <b-col  v-for="(p,index) in filtered" :key="index" cols="12" md="6">
+    <b-col  v-for="(p,index) in filtered" :key="index" cols="12" sm="6">
       <Collapse :team1="p.team1" :team2="p.team2" :date="p.day" :hour="p.time" :location="p.location" :order="locationOrder(p.location)"/>
         
      </b-col>
@@ -126,4 +126,5 @@ export default {
             height: 30px;
         }
     }
+    
 </style>

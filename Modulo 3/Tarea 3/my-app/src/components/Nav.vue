@@ -88,70 +88,69 @@ export default {
 
 <style scoped lang="scss">
 
-button{
-    margin-right: 15px;
-}
+    button{
+        margin-right: 15px;
+    }
 
-.navbar{
-    background-color:#033949;
-}
+    .navbar{
+        background-color:#033949;
+    }
 
-#title{
-    font-size: 40px;
-}
+    #title{
+        font-size: 40px;
+    }
 
+    p{
+        font-size: 25px;
+        margin: 0;
+        padding: 0;
+        color: whitesmoke;
+        text-decoration: none;
+        margin: 5px 0;
+    }
+    a{
+        text-decoration: none;
+    }
 
-p{
-    font-size: 25px;
-    margin: 0;
-    padding: 0;
-    color: whitesmoke;
-    text-decoration: none;
-    margin: 5px 0;
-}
-a{
-    text-decoration: none;
-}
+    .home-icon{
+        padding-right: 10px;
+        position: relative;
+        left: -50px;
+        color: whitesmoke;
+    }
 
-.home-icon{
-    padding-right: 10px;
-    position: relative;
-    left: -50px;
-    color: whitesmoke;
-}
+    .game-info{
+        left: -25px;
+    }
 
-.game-info{
-    left: -25px;
-}
+    .location{
+        left: -38px;
+    }
 
-.location{
-    left: -38px;
-}
+    .chat{
+        left: -60px;
+    }
 
-.chat{
-    left: -60px;
-}
-
-.nav-link{
-    font-size: 25px;
-}
-
+    .nav-link{
+        font-size: 25px;
+    }
 
 
-a {
-    font-weight: bold;
 
-    &.router-link-exact-active {
-       
-      svg{
-        color: rgb(177, 214, 159);
-        }
+    a {
+        font-weight: bold;
 
-        p{
-            color:  rgb(177, 214, 159);
-            
+        &.router-link-exact-active {
+        
+        svg{
+            color: rgb(177, 214, 159);
+            }
+
+            p{
+                color:  rgb(177, 214, 159);
+                
+            }
         }
     }
-  }
 
 </style>

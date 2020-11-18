@@ -5,11 +5,6 @@
           <div class="main-view"> <router-view/></div>
           <Footer/>
         </div>
-      
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
-
-   
   </div>
 </template>
 
@@ -46,30 +41,27 @@ export default {
 </script>
 
 <style lang="scss">
-*{
-  padding: 0;
-  margin: 0;
-}
+  *{
+    padding: 0;
+    margin: 0;
+  }
 
-div{
-  padding: 0;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  div{
+    padding: 0;
+  }
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-.flex{
-  display: grid;
-  height: 100vh;
-  width: 100vw;
-  align-content: space-between;
-}
-
-
-
+  .flex{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    align-content: space-between;
+  }
 
 </style>

@@ -1,14 +1,13 @@
 <template>
-
-    
+  
     <div>
             <b-button
                 id="box"
                 :class="visible ? null : 'collapsed'"
                 :aria-expanded="visible ? 'true' : 'false'"
                 aria-controls="collapse-4"
-                @click="visible = !visible"
-            >
+                @click="visible = !visible">
+
                 <div class="date">
                     {{date}}
                 </div>
@@ -45,11 +44,10 @@
        
     </div>
 
-  
- 
 </template>
 
 <script>
+
 import {mapState} from 'vuex';
 
 export default {
@@ -66,74 +64,68 @@ export default {
         
 }
 
-
-
 </script>
 
 <style scoped lang="scss">
 
-
-#box{
-    height: 80px;
-    width: 100%;
-    background: rgb(177, 214, 159);
-    position: relative;
-    margin-top: 50px;
-    
-     
-    .date{
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding-left: 5px;
-        font-size: 22px;
-        font-weight: bold;
-    
-    }
-
-    .circle{
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        background: white;
-    
-
-        p{
-            text-align: center;
-            margin-top: 25%;
-            color: black;
-            font-size: 20px;
+    #box{
+        height: 80px;
+        width: 100%;
+        background: rgb(177, 214, 159);
+        position: relative;
+        margin-top: 50px;
+        
+        
+        .date{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-left: 5px;
+            font-size: 18px;
             font-weight: bold;
         
         }
+
+        .circle{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: white;
         
-    }
 
-    .linea{
-        background: black;
-        width: 10px;
-        height: 3px;
-        margin: 0 30px;
-    }
-}
-
-.container{
-    background: #0f2f38;
-
-    .hour, .location{
-        margin-bottom: 10px;
-        color: white;
-        p{
-            margin: 0;
-            width: 150px;
-           
+            p{
+                text-align: center;
+                margin-top: 25%;
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
             
+            }
             
         }
+
+        .linea{
+            background: black;
+            width: 10px;
+            height: 3px;
+            margin: 0 30px;
+        }
     }
-}
 
+    .container{
+        background: #0f2f38;
 
-
+        .hour, .location{
+            margin-bottom: 10px;
+            color: white;
+            p{
+                margin: 0;
+                width: 150px;
+            
+                
+                
+            }
+        }
+    }
 
 </style>

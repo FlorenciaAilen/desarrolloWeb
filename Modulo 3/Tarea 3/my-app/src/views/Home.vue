@@ -8,8 +8,6 @@
         </b-col>
        </b-row>
      </b-container>
-   
-
   </div>
 </template>
 
@@ -51,8 +49,9 @@ beforeMount(){
 </script>
 
 <style scoped lang="scss">
-.pelota{
-    height: 240px;
+
+  .pelota{
+    height: 24  0px;
     width: 100%;
     position: relative;
     top: -9.5vh;

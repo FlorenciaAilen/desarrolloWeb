@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  
 
   .container{
     display: flex;
@@ -41,20 +40,19 @@ export default {
     }
   }
 
-@media only screen and (min-width: 576px){
+  @media only screen and (min-width: 576px){
 
-    #div-container{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      #div-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    .container{
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
     }
-   .container{
-     border-radius: 50%;
-     width: 180px;
-     height: 180px;
-   }
-}
+  }
     
-
 </style>

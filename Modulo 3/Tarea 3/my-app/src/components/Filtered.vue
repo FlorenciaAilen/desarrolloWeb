@@ -32,4 +32,5 @@ export default {
     select{
         width: 200px;
     }
+    
 </style>
